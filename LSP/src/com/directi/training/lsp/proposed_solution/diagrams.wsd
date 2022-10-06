@@ -1,0 +1,12 @@
+@startuml LSP New
+class Duck {
+    void quack() throws Exception
+    void swim() throws Exception
+}
+class ElectronicDuck {
+    void quack() throws RuntimeException
+    void swim() throws RuntimeException
+}
+
+Duck <|-- ElectronicDuck
+@enduml

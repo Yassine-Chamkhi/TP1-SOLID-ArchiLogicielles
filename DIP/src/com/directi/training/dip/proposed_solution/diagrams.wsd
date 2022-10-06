@@ -1,0 +1,26 @@
+@startuml DIP New
+Interface IEncoder {
+    void encodeWithFiles() throws IOException
+    void encodeBasedOnNetworkAndDatabase() throws IOException
+}
+Interface IDatabase {
+    int write(String)
+}
+
+class EncodingModule {
+
+}
+
+class MyDatabase {
+
+}
+
+class EncodingModuleClient {
+
+}
+
+IDatabase <|-- MyDatabase
+IEncoder <|-- EncodingModule
+IDatabase <.. EncodingModule: uses
+IEncoder <.. EncodingModuleClient: uses 
+@enduml
